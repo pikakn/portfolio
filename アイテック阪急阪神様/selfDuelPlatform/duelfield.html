@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
     <head>
         <link rel="stylesheet" href="style/duelfield.css">
         <link rel="stylesheet" href="style/readmelayout.css">
         <title>DuelFieldInterface</title>
         <link rel="icon" href="readme/aikon.ico">
+        <meta charset="utf-8">
     </head>
     <body>
         <main>
@@ -76,8 +77,12 @@
                     </div>
                 </div>
                 <input type="file" id="cardInput" multiple>
-                <button type="botton" id="listClose">リストを閉じる</button>
+                <button type="button" id="listClose">リストを閉じる</button>
                 <div class="cardZone" id="cardList">   
+                </div>
+                <button type="button" id="toggleView">表示切替</button>
+                <div id="cardView">
+
                 </div>
             </div>
             <h1>一人回し用インターフェイス</h1>
@@ -117,11 +122,16 @@
                 </div>
                 <h3>3,各種操作</h4>
                 <div class="paragraph-start">
-                    <h4>フィールドについて</h4>
-                    <img src="readme/リストの見え方.png" alt="" class="subImages">                    
+                    <h4>フィールドについて</h4> 
+                    <img src="readme/リストの見え方.png" alt="" class="subImages">                   
                     <p>フィールドは遊戯王と同様にカードを置くことができます。ドラッグアンドドロップで移動させます。また、カードを重ねることもできます。</p><br>
                     <p>デッキ、墓地、除外状態、exデッキに関しては、リザーブと同じように対応する余白をクリックすることで、カードを右にリスト表示することができます。</p>
                     <p>モンスターゾーンのカードをクリックすると、守備表示になります。もう一度クリックすると攻撃表示に戻ります。</p>
+                    <p style = "font-weight:bold;">2024/12/12実装</p>
+                    <p>表示されたリストを、キーボードのqの入力で消せるようにしました。</p>
+                    <p>カード（リストの中のものも可）を右クリックすると、カードが左側に拡大表示されます。画像にカードテキストが含まれている場合、テキストの確認に使用できます。</p>
+                    <p>拡大表示されたカードは、クリックまたは右クリックまたはキーボードのqによってもとに戻すことができます。</p>
+                    <p>拡大表示に2種類のパターンを用意しました。1つはカード全体を映すもので、もう一つはテキストを見やすくしたものです。それぞれ左上の表示切替ボタンで切り替えができます。</p>
                     <h4>データの消去</h4>
                     <p>画面を初期状態にリセットしたい場合は、本ソフトをリロードしてください。</p>
                     <p>その際内部データが消えることはありません。</p>
@@ -134,5 +144,6 @@
         <script src="js/listdisplay.js"></script>
         <script src="js/defposition.js"></script>
         <script src="js/cardInput.js"></script>
+        <script src="js/carddetails.js"></script>
     </body>
 </html>
